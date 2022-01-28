@@ -1,10 +1,15 @@
 const todos = [];
 
-const get = (element) => document.getElementById(element);
-const pendingList = get("pendingList");
-const completedList = get("completedList");
-const addForm = get("addForm");
-const newTodo = get("newTodo");
+const get = (elements) =>
+  elements.map((element) => document.getElementById(element));
+
+const [pendingList, completedList, addForm, newTodo] = get([
+  "pendingList",
+  "completedList",
+  "addForm",
+  "newTodo",
+]);
+
 const cssClasses = {
   pending:
     "bg-white w-full text-center text-green-500 rounded py-4 border-2 border-green-500 transition transform ease-in-out duration-300 hover:bg-green-500 hover:text-white hover:scale-110 hover:rotate-1 cursor-pointer",
